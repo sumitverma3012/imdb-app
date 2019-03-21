@@ -4,6 +4,7 @@ import { getMovieList } from '../../store/actions/actions';
 import MovieItem from './MovieItem';
 import SearchMovies from './SearchMovies';
 import Pagination from '../widgets/Pagination';
+import Notification from '../widgets/Notification';
 
 class MoviesList extends Component {
     componentDidMount() {
@@ -15,10 +16,10 @@ class MoviesList extends Component {
 
     render() {
         let movieList;
-        if (this.props.items.Search) {
+        if (this.props.items && this.props.items.Search) {
             movieList = this.props.items.Search.map((item, i) => <MovieItem key={i} data={item} />);
         } else {
-            movieList = <div className="alert alert-info" role="alert">Not Found!</div>
+            movieList = <Notification error="Not Found!"></Notification>
         }
         return (
             <div className="container center">

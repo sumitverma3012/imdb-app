@@ -15,8 +15,10 @@ const MovieReview = (props) => {
         props.history.goBack();
     }
 
-    const ratingValueHandler = () => {
-        
+    const ratingValueHandler = (e) => {
+        if (e && e.target && e.target.value) {
+            console.log(e.target.value)
+        }
     }
 
     if (!loggedIn) {
@@ -29,43 +31,48 @@ const MovieReview = (props) => {
                     <form action="#" className="col m4">
                         <div>
                             Rating:
-                    </div>
+                        </div>
                         <p className="range-field">
-                            <input type="range" value="5" id="movierange" min="0" max="10" onChange={ratingValueHandler}/>
+                            <input type="range" step="1" id="movierange" min="0" max="10" onChange={ratingValueHandler} />
                         </p>
                         <div>
                             How likely you are to recommend the movie:
                         </div>
                         <br></br>
-                        <div className="chip">Less</div>
-                        <div className="chip">Very</div>
-                        <div className="chip">Extremely</div>
 
+                        <div className="moviereview__chip">
+                            <p>
+                                <label>
+                                    <input name="group1" type="radio" />
+                                    <span>Less</span>
+                                </label>
+                            </p>
+
+                        </div>
+                        <div className="moviereview__chip">
+                            <p>
+                                <label>
+                                    <input name="group1" type="radio" />
+                                    <span>Very</span>
+                                </label>
+                            </p>
+                        </div>
+                        <div className="moviereview__chip">
+                            <p>
+                                <label>
+                                    <input name="group1" type="radio" />
+                                    <span>Extremely</span>
+                                </label>
+                            </p>
+                        </div>
                     </form>
                     <div className="card-action center">
-                        <button onClick={submitReview} className='btn btn-primary movie--button'>Submit</button>
+                        <button onClick={submitReview} className='btn btn-primary movie__button'>Submit</button>
                         <button onClick={goBack} className='btn btn-default'>Back</button>
                     </div>
                 </div>
             </div>
         </div>
-
-        // <div className="container">
-        //     <div className="row">
-        // <form action="#" className="col m4">
-        //     <p className="range-field">
-        //         <input type="range" id="test5" min="0" max="10" />
-        //     </p>
-        //     <section>
-        //         How likely you areto recommend the movie:
-
-        //         <div className="chip">Less</div>
-        //         <div className="chip">Very</div>
-        //         <div className="chip">Extremely</div>
-        //     </section>
-        // </form>
-        //     </div>
-        // </div>
     )
 }
 

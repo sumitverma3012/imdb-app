@@ -8,12 +8,12 @@ import { getMovieList } from '../../store/actions/actions';
 
 
 class Pagination extends Component {
-    prevClick() {
+    prevClick = () => {
         let searchData = this.props.q.replace('?q=','');
         this.props.getMovieList({ q: searchData, page: Number(this.props.page) - 1 });
     }
 
-    nextClick() {
+    nextClick = () =>{
         let searchData = this.props.q.replace('?q=','');
         this.props.getMovieList({ q: searchData, page: Number(this.props.page) + 1 });
     }
@@ -22,8 +22,8 @@ class Pagination extends Component {
         return (
             <div>
                 {this.props.items.totalResults > 10 &&
-                    <div className="row pagination-container">
-                        <nav className="row text-xs-center">
+                    <div className="row">
+                        <nav className="row">
                             {Number(this.props.page) > 1 ? <Link to={`/movies?q=${this.props.q}&page=${Number(this.props.page) - 1}`} className="btn btn-sm btn-primary" onClick={this.prevClick.bind(this)}>Previous</Link> : null}
                             <Link to={`/movies?q=${this.props.q}&page=${Number(this.props.page) + 1}`} className="btn btn-sm btn-primary" onClick={this.nextClick.bind(this)}>Next</Link>
                         </nav>

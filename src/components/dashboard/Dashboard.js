@@ -20,6 +20,7 @@ class Dashboard extends Component {
                 <div className="row">
                 <br></br>
                     <div className="col m12 s12">
+                    <p>Reviewed Movies</p>
                         {movieList}
                     </div>
                 </div>

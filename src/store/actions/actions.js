@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history';
 
 export const history = createBrowserHistory();
 
-export function getMovieList(payload) {
+export const getMovieList = (payload) => {
     
     return dispatch => {
         dispatch({ type: START_FETCHING });
@@ -18,7 +18,7 @@ export function getMovieList(payload) {
             });
     };
 };
-export function getMovieDetail(payload) {
+export const getMovieDetail = (payload) => {
     return dispatch => {
         dispatch({ type: START_FETCHING });
         return fetch(`${API_URL}?${API_KEY_QUERY_STRING}=${API_KEY}&i=${payload}&plot=full&r=json`)

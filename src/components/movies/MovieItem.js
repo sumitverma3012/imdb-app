@@ -14,7 +14,7 @@ class MovieItem extends Component {
     render() {
         return (
             <div className="card col m4 hoverable large card-main image-container-card">
-                <div className="card-image waves-effect waves-block waves-light">
+                <div className="card-image waves-effect waves-block waves-light movieitem__image">
                     {this.image()}
 
                 </div>

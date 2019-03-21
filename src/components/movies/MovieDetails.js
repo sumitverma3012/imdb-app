@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 import { connect } from "react-redux";
@@ -26,6 +26,10 @@ class MovieDetails extends Component {
         this.props.history.push('/moviereview')
     }
     render() {
+        const { loggedIn } = this.props;
+        if (!loggedIn) {
+            return <Redirect to='/signin'></Redirect>
+        }
         return (
             <div className="container">
                 <div className="col s12 m7">
@@ -58,7 +62,7 @@ class MovieDetails extends Component {
 
                                     <strong>IMDB Rating</strong>
                                     <hr />
-                                    <p className="card-text"><a href={`https://www.imdb.com/title/${this.props.item.imdbID}/`} target="_blank">{this.props.item.imdbRating}</a> ({this.props.item.imdbVotes} Votes)</p>
+                                    <p className="card-text"><a href={`https://www.imdb.com/title/${this.props.item.imdbID}/`}>{this.props.item.imdbRating}</a> ({this.props.item.imdbVotes} Votes)</p>
 
                                     <strong>Runtime</strong>
                                     <hr />
@@ -86,7 +90,7 @@ class MovieDetails extends Component {
 
                             </div>
                             <div className="card-action">
-                                <button className='btn btn-default movie--button' onClick={this.movieReview}>Review</button>
+                                <button className='btn btn-default movie__button' onClick={this.movieReview}>Review</button>
                                 <button onClick={this.goBack} className='btn btn-default'>Back</button>
                             </div>
                         </div>
@@ -99,7 +103,10 @@ class MovieDetails extends Component {
 
 
 const mapStateToProps = state => {
-    return { item: state.item };
+    return { 
+        loggedIn: state.loggedIn,
+        item: state.item 
+    };
 };
 
 const mapDispatchToProps = dispatch => {

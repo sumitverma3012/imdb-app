@@ -14,7 +14,7 @@ const initialState = {
 	reviewedList: [],
 	q: '',
 };
-function rootReducer(state = initialState, action) {
+const rootReducer = (state = initialState, action) => {
 	if (action.type === SET_MOVIE_LIST) {
 		return {
 			...state,
