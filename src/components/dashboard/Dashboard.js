@@ -13,7 +13,7 @@ class Dashboard extends Component {
         if (this.props.reviewedList && this.props.reviewedList.length) {
             movieList = this.props.reviewedList.map((item, i) => <MovieItem key={i} data={item} />);
         } else {
-            movieList = <Notification error="No movies reviewed yet!"></Notification>
+            movieList = <Notification error="No movies reviewed yet. Explore and review!"></Notification>
         }
         return (
             <div className="dashboard center container">
