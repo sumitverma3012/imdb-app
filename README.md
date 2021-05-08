@@ -1,4 +1,6 @@
 
+[Deployed Version](https://sumitverma3012.github.io/imdb-app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
