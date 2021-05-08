@@ -1,0 +1,13 @@
+{
+  "main.css": "/imdb-app/static/css/main.008b3eb3.chunk.css",
+  "main.js": "/imdb-app/static/js/main.0b03beab.chunk.js",
+  "main.js.map": "/imdb-app/static/js/main.0b03beab.chunk.js.map",
+  "runtime~main.js": "/imdb-app/static/js/runtime~main.2d4ac293.js",
+  "runtime~main.js.map": "/imdb-app/static/js/runtime~main.2d4ac293.js.map",
+  "static/js/2.898dcc32.chunk.js": "/imdb-app/static/js/2.898dcc32.chunk.js",
+  "static/js/2.898dcc32.chunk.js.map": "/imdb-app/static/js/2.898dcc32.chunk.js.map",
+  "index.html": "/imdb-app/index.html",
+  "precache-manifest.25553034a4be9970992609412066915a.js": "/imdb-app/precache-manifest.25553034a4be9970992609412066915a.js",
+  "service-worker.js": "/imdb-app/service-worker.js",
+  "static/css/main.008b3eb3.chunk.css.map": "/imdb-app/static/css/main.008b3eb3.chunk.css.map"
+}
